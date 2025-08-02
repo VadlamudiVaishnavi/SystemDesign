@@ -35,7 +35,8 @@ public class BorrowService {
             long daysBorrowed = ChronoUnit.DAYS.between(toReturn.getBorrowDate(), todaysDate);
             if(daysBorrowed > MAX_BORROW_DAYS){
                 double penalty = (daysBorrowed-MAX_BORROW_DAYS)*PENALTY_PER_DAY;
-                member.addPenalty(penalty);
+                member.setPenaltyIncurredPenalty(penalty);
+                System.out.println("The member has incurred penalty fee. Please pull out your card.");
             }
 
             toReturn.markReturned();

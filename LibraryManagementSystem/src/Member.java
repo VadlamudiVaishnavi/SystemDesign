@@ -3,16 +3,16 @@ import java.util.List;
 
 public class Member implements Account{
     protected String name;
-    protected String password;
-    protected List<Item> borrowedItems;
-    double penaltyIncurred;
+    private String password;
+    private List<Item> borrowedItems;
+    private double penaltyIncurred;
     public Member(String name){
         this.name = name;
         borrowedItems = new ArrayList<>();
         penaltyIncurred=0.0;
     }
 
-    public void addPenalty(double penaltyIncurred){
+    public void setPenaltyIncurredPenalty(double penaltyIncurred){
         this.penaltyIncurred = penaltyIncurred;
     }
 
